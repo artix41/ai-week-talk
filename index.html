@@ -188,7 +188,10 @@
                             | \mathbb{E}_{x \sim X_s}[h(x) \neq  h'(x)] - \mathbb{E}_{x \sim X_t}[h(x) \neq  h'(x)] |
                             \]
                         </li>
-
+                        <li class="fragment">
+                            <strong>Goal</strong>: finding $f: \chi_s \rightarrow \chi_t$ to minimize $\frac{1}{2} d_{H \Delta H}(X_s, f(X_t))$
+                            and $h$ to minimize $\epsilon_S(h)$
+                        </li>
                     </ul>
                 </section>
 
@@ -321,10 +324,6 @@
                         $\mathrm{W}(P_r,P_{\theta}) = \inf_{\gamma \in \Pi} \, \sum\limits_{i,j} \Vert x_i - y_j \Vert \gamma (x_i,y_j)$
                          with $\gamma (x_i,y_j) \in \{0,1\}$
                      </p>
-                </section>
-
-                <section>
-
                 </section>
 
                 <section data-transition="none">
@@ -656,23 +655,48 @@
                     <h3 class="with-sub">UNsupervised Image-to-Image Translation (UNIT)</h3>
                     <p class="sub"><em>(Liu et Al., 2017)</em></p>
 
+                    <p style="text-align: center">Results</p>
                     <div style="text-align: center">
-                        Results
-                        <img src="images/day2night.gif" />
+
+                        <video width="800px" controls>
+                            <source src="images/seb.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- <img src="images/day2night.gif" /> -->
                     </div>
                 </section>
 
                 <section>
                     <h3 class="with-sub">State-of-the art algorithm: VADA-DIRT-T</h3>
                     <p class="sub"><em>(Shu et Al., 2017)</em></p>
+
+                    <ul>
+                        <li>Virtual Adversarial Domain Adaptation (VADA)</li>
+                        <ul>
+                            <li>
+                                <strong>Adversarial Method</strong>: find an embedding space invariant between the two domains
+                                and a hypothesis that classify the source in this embedding space
+                            </li>
+                            <li>
+                                <strong>Cluster Assumption</strong>: the decision-boundary should not cross high-density regions
+                                ⇒ the output probability should be extreme (high-confidence)
+                                ⇒ $\min_{\theta} \mathbb{E}_{x \in \mathcal{D_t}}[-h_{\theta}(x) \log(h_{\theta}(x))] $
+                                <img src="images/entropy.png" style="width: 200px;" />
+                            </li>
+                            <li>
+                                <strong>Virtual Adversarial Training</strong>: the hypothesis should be invariant to slight perturbation of the input (adversarial examples).
+                                We can minimize the KL divergence between $h_{\theta}(x)$ and $h_{\theta}(x+r)$ for $||r||<\epsilon$
+                            </li>
+                        </ul>
+                    </ul>
                 </section>
 
                 <section>
-                    <h3 class="with-sub">Decision-boundary Iterative Refinement Training with a Teacher (DIRT-T)</h3>
+                    <h3 class="with-sub">State-of-the art algorithm: VADA-DIRT-T</h3>
                     <p class="sub"><em>(Shu et Al., 2017)</em></p>
 
                     <div style="text-align: center">
-                        <img src="images/dirt-t.png" />
+                        <img src="images/dirt-t.png"/>
                     </div>
                 </section>
 
