@@ -599,6 +599,21 @@
 				</div>
 			</section>
 
+            <section data-transition="none">
+				<h3 class="with-sub">Deep JDOT</h3>
+				<p class="sub"><em><a href="https://arxiv.org/pdf/1803.10081.pdf">(Damodaran et al., 2017)</a></em></p>
+
+                <p class="left">Recent improvements of the first paper:</p>
+				<ul>
+                    <li>Learn optimal transport in an embedding space (instead of the input space)</li>
+                    <li>Iterative algorithm:</li>
+                    <ul>
+                        <li>For a fixed transport plan, learn an embedding network that make the linked points closer, and a classifier on the pseudo-labels</li>
+                        <li>For a fixed embedding and classifier, learn the best transport plan</li>
+                    </ul>
+                </ul>
+			</section>
+
 			<section>
 				<h3>Adversarial Domain Adaptation</h3>
 
