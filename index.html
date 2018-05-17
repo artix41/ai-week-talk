@@ -820,13 +820,51 @@
 				<h3 class="with-sub">UNsupervised Image-to-Image Translation (UNIT)</h3>
 				<p class="sub"><em><a href="https://arxiv.org/pdf/1703.00848.pdf">(Liu et al., 2017)</a></em></p>
 
-				<p style="text-align: center">Results</p>
 				<div style="text-align: center">
 
+					<!--
 					<video width="800px" controls>
 						<source src="images/seb.mp4" type="video/mp4" />
 						Your browser does not support the video tag.
 					</video>
+					-->
+					<video width="600px" controls autoplay>
+						<source src="images/unit_orig.mp4" />
+							Your browser does not support the video tag.
+					</video>
+					<p class="small">UNIT</p><br />
+					<video width="600px" controls autoplay>
+						<source src="images/no_regularization.mp4" />
+							Your browser does not support the video tag.
+					</video>
+					<p class="small">Compared to just a target discriminator (no cycle-consistency, no shared latent space)</p>
+
+					<!-- <img src="images/day2night.gif" /> -->
+				</div>
+			</section>
+
+			<section>
+				<h3 class="with-sub">Extra regularize the latent space</h3>
+
+				<div style="text-align: center">
+
+					<!--
+					<video width="800px" controls>
+						<source src="images/seb.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+					-->
+					<video width="600px" controls autoplay>
+						<source src="images/unit_orig.mp4" />
+							Your browser does not support the video tag.
+					</video>
+					<p class="small">UNIT</p><br />
+					<video width="600px" controls autoplay>
+						<source src="images/realgan.mp4" />
+							Your browser does not support the video tag.
+					</video>
+					<p class="small">Beyond UNIT (my results) - regularizing the output space!</p>
+
 					<!-- <img src="images/day2night.gif" /> -->
 				</div>
 			</section>
