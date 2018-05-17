@@ -31,13 +31,12 @@
 
 			<section>
 				<br />
-				<h2>Introduction to Domain Adaptation</h2>
+				<h3>Domain Adaptation and Image-to-Image Translation</h3>
 				<div style="text-align: center">
 					<img src="images/cycleGAN.png" />
 				</div>
-				By Arthur Pesah − Master's student at KTH &
-				<br />
-				Sebastian Bujwid - DL Engineer at Univrses + ML MSc student at KTH
+				<p style="margin-bottom:10px"><strong>Arthur Pesah</strong><br/>Master's student at KTH</p>
+				<p><strong>Sebastian Bujwid</strong><br />DL Engineer at Univrses + ML MSc student at KTH</p>
 
 				<!--<img src="images/logos/sthml-ai.png" class="logo-left">-->
 			</section>
@@ -123,7 +122,7 @@
 			</section>
 
 			<section>
-				<h3>Applications</h3>
+				<h3>Applications of domain adaptation</h3>
 
 				<table class="applications">
 					<tr>
@@ -154,7 +153,7 @@
 				</table>
 			</section>
 			<section>
-				<h3>Synthetic data in Computer Vision</h3>
+				<h3>Applications of image-to-image translation: synthetic data</h3>
 
 				<ul>
 					<li class="fragment">
@@ -171,7 +170,7 @@
 				</ul>
 			</section>
 			<section>
-				<h3>Synthetic data in Computer Vision</h3>
+				<h3>Applications of image-to-image translation: synthetic data</h3>
 
 				<ul>
 					<li>
@@ -197,7 +196,7 @@
 				</ul>
 			</section>
 			<section>
-				<h3>Synthetic data in Computer Vision</h3>
+				<h3>Applications of image-to-image translation: synthetic data</h3>
 
 				<ul>
 					<li>Take syntetic data and make it real!</li>
@@ -232,6 +231,25 @@
 						<td>Few-shot domain adaptation</td>
 						<td>Fully labeled</td>
 						<td>Few samples</td>
+					</tr>
+				</table>
+
+			</section>
+            <section>
+				<h3>Different flavours of image-to-image translation</h3>
+
+				<table class="real-table">
+					<tr>
+						<th></th>
+						<th>Presence of pairs</th>
+					</tr>
+					<tr>
+						<td>Supervised i2i translation</td>
+						<td>Yes</td>
+					</tr>
+					<tr>
+						<td>Unsupervised i2i translation</td>
+						<td>No</td>
 					</tr>
 				</table>
 
@@ -613,8 +631,9 @@
 			<section>
 				<h3>Adversarial Domain Adaptation</h3>
 
-				<p style="margin-bottom: 25px">Example of CycleGAN <a href="https://arxiv.org/pdf/1703.10593">(Zhu et al., 2017)</a></p>
-				<img src="images/cycleGAN.png" width="200%"/>
+                <p>Classical GAN architecture:</p>
+				<img src="images/gan_schema.png" width="200%"/>
+                <p>Domain Adaptation: replace the input noise by a target image</p>
 			</section>
 
 			<section data-transition="none">
@@ -745,21 +764,20 @@
 			</section>
 
 			<section>
-				<h3>Adversarial Domain Adaptation</h3>
+				<h3 class="with-sub">Cycle-GAN</h3>
+                <p class="sub"><em><a href="https://arxiv.org/pdf/1703.10593">(Zhu et al., 2017)</a></em></p>
 
-				<p style="margin-bottom: 25px">Example of CycleGAN <a href="https://arxiv.org/pdf/1703.10593">(Zhu et al., 2017)</a></p>
 				<img src="images/cycleGAN.png" width="200%"/>
 			</section>
 			<section>
-				<h3>Cycle-GAN</h3>
+				<h3 class="with-sub">Cycle-GAN</h3>
+                <p class="sub"><em><a href="https://arxiv.org/pdf/1703.10593">(Zhu et al., 2017)</a></em></p>
 
 				<ul>
-					<div class="fragment">
 					<li>Cycle-consistency assumption</li>
 						\[
 						F_{TS}(F_{ST}(x_S)) \approx x_S
 						\]
-					</div>
 					<div class="fragment">
 					<li>It's an approximate assumption - we don't want (can't have) it</li>
 					<br />
@@ -857,13 +875,9 @@
 						<td style="border-bottom: 1px solid white">73.8</td>
 					</tr>
 					<tr>
-						<th rowspan=3 style="vertical-align: middle;">2016</th>
+						<th rowspan=2 style="vertical-align: middle;">2016</th>
 						<td><a href="https://arxiv.org/pdf/1607.03516.pdf">DRCN</a></td>
 						<td>82.0</td>
-					</tr>
-					<tr>
-						<td><a href="https://arxiv.org/pdf/1608.06019.pdf">DSN</a></td>
-						<td>82.7</td>
 					</tr>
 					<tr>
 						<td style="border-bottom: 1px solid white"><a href="https://arxiv.org/pdf/1611.02200.pdf">DTN</a></td>
@@ -883,16 +897,19 @@
 						<td style="border-bottom: 1px solid white">97.6</td>
 					</tr>
 					<tr>
-						<th rowspan=1 style="vertical-align: middle;">2018</th>
+						<th rowspan=2 style="vertical-align: middle;">2018</th>
 						<td><a href="https://arxiv.org/pdf/1802.08735.pdf">DIRT-T</a></td>
 						<td>99.4</td>
+					</tr>
+                    <tr>
+						<td><a href="https://arxiv.org/pdf/1802.08735.pdf">Deep JDOT</a></td>
+						<td>96.7</td>
 					</tr>
 				</table>
 			</section>
 
 			<section>
 				<h3>Resources</h3>
-
 				<ul>
 					<li>
 						<strong>Awesome Transfer Learning</strong>: curated list of papers,
