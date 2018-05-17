@@ -27,123 +27,6 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section>
-				<h3>Synthetic data in Computer Vision</h3>
-
-				<ul>
-					<li class="fragment">
-						Data can be <strong>very expensive</strong> to obtain and <strong>annotate</strong>.
-					</li>
-					<li class="fragment">
-						Synthetic data is relatively <strong>cheap</strong> and contains <strong>ground-truth</strong> information, but it's usefulness is limited due to a <strong>domain shift</strong>.
-						<br />
-						<br />
-						<div style="text-align: center; fragment">
-							<img style="width: 400px" src="images/synthia_sample1.png" />
-						</div>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Synthetic data in Computer Vision</h3>
-
-				<ul>
-					<li>
-						Real data is often even impossible to annotate, because of not all the information is present on just an image:
-						<div class="fragment">
-						<ul>
-							<li>Oclussions</li>
-							<li>No 3D information (depth)</li>
-						</ul>
-
-						<table>
-							<tr>
-								<td>
-									<img style="" src="images/ganerated-hand1.png" />
-								</td>
-								<td>
-									<img style="" src="images/human-mesh-sample1.png" />
-								</td>
-							</tr>
-						</table>
-					</div>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Synthetic data in Computer Vision</h3>
-
-				<ul>
-					<li>Take syntetic data and make it real!</li>
-					<div class="fragment">
-					<li>Sure, we GAN!</li>
-					<img style="width: 800px" src="images/synthia2cityscapes.png"
-					</div>
-					<li class="fragment">Image-to-image translation methods for the win</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Supervised image-to-image translation</h3>
-				<ul>
-					<li class="fragment">Supervision - correspondence between samples in the datasets</li>
-					<div class="fragment">
-					<div style="text-align: center">
-						<img style="width: 700px" src="images/sup-pix2pix-outputs.png" />
-					</div>
-					<li>pix2pix - https://phillipi.github.io/pix2pix/</li>
-					</div>
-					<div class="fragment">
-					<li>Conditional GAN</li>
-					<ul>
-						<li>source sample passed to the generator</li>
-						<li>the discriminator sees pairs: corresponding source & target images</li>
-					</ul>
-					</div>
-				</ul>
-			</section>
-			<section>
-				<h3>Unsupervised image-to-image translation</h3>
-				<ul>
-					<li class="fragment">More challenging - relation between datasets not present in the data</li>
-					<li class="fragment">But also more interesting - practically often impossible to get create datasets with one-to-one correspondences</li>
-					<table>
-						<tr>
-							<td class="fragment">
-								<img style="width: 400px" src="images/synthia_sample1.png" />
-								<center>Synthetic images</center>
-							</td>
-							<td class="fragment">
-								<img style="width: 400px" src="images/cityscapes_sample1.png" />
-								<center>Real images</center>
-							</td>
-						</tr>
-					</table>
-					<li class="fragment">What is the relation between images from different domains?</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Adversarial Domain Adaptation</h3>
-
-				<p style="margin-bottom: 25px">Example of CycleGAN <a href="https://arxiv.org/pdf/1703.10593">(Zhu et al., 2017)</a></p>
-				<img src="images/cycleGAN.png" width="200%"/>
-			</section>
-			<section>
-				<h3>Cycle-GAN</h3>
-
-				<ul>
-					<div class="fragment">
-					<li>Cycle-consistency assumption</li>
-						\[
-						F_{TS}(F_{ST}(x_S)) \approx x_S
-						\]
-					</div>
-					<br />
-					<div class="fragment">
-					<li>It's an approximate assumption - we don't want (can't have) it</li>
-					<img style="width: 600px" src="images/incorrect-cycle.png" />
-					</div>
-				</ul>
-			</section>
 
 
 			<section>
@@ -223,6 +106,12 @@
 			</section>
 
 			<section>
+				<h3>Relation with transfer learning</h3>
+
+				<img src="images/transfer-learning-diagram.jpg" />
+			</section>
+
+			<section>
 				<h3>Applications</h3>
 
 				<table class="applications">
@@ -253,11 +142,60 @@
 					</tr>
 				</table>
 			</section>
-
 			<section>
-				<h3>Relation with transfer learning</h3>
+				<h3>Synthetic data in Computer Vision</h3>
 
-				<img src="images/transfer-learning-diagram.jpg" />
+				<ul>
+					<li class="fragment">
+						Data can be <strong>very expensive</strong> to obtain and <strong>annotate</strong>.
+					</li>
+					<li class="fragment">
+						Synthetic data is relatively <strong>cheap</strong> and contains <strong>ground-truth</strong> information, but it's usefulness is limited due to a <strong>domain shift</strong>.
+						<br />
+						<br />
+						<div style="text-align: center; fragment">
+							<img style="width: 400px" src="images/synthia_sample1.png" />
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Synthetic data in Computer Vision</h3>
+
+				<ul>
+					<li>
+						Real data is often even impossible to annotate, because of not all the information is present on just an image:
+						<div class="fragment">
+						<ul>
+							<li>Oclussions</li>
+							<li>No 3D information (depth)</li>
+						</ul>
+
+						<table>
+							<tr>
+								<td>
+									<img style="" src="images/ganerated-hand1.png" />
+								</td>
+								<td>
+									<img style="" src="images/human-mesh-sample1.png" />
+								</td>
+							</tr>
+						</table>
+					</div>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Synthetic data in Computer Vision</h3>
+
+				<ul>
+					<li>Take syntetic data and make it real!</li>
+					<div class="fragment">
+					<li>Sure, we GAN!</li>
+					<img style="width: 800px" src="images/synthia2cityscapes.png"
+					</div>
+					<li class="fragment">Image-to-image translation methods for the win</li>
+				</ul>
 			</section>
 
 			<section>
@@ -287,7 +225,45 @@
 				</table>
 
 			</section>
-
+			<section>
+				<h3>Supervised image-to-image translation</h3>
+				<ul>
+					<li class="fragment">Supervision - correspondence between samples in the datasets</li>
+					<div class="fragment">
+					<div style="text-align: center">
+						<img style="width: 700px" src="images/sup-pix2pix-outputs.png" />
+					</div>
+					<li>pix2pix - https://phillipi.github.io/pix2pix/</li>
+					</div>
+					<div class="fragment">
+					<li>Conditional GAN</li>
+					<ul>
+						<li>source sample passed to the generator</li>
+						<li>the discriminator sees pairs: corresponding source & target images</li>
+					</ul>
+					</div>
+				</ul>
+			</section>
+			<section>
+				<h3>Unsupervised image-to-image translation</h3>
+				<ul>
+					<li class="fragment">More challenging - relation between datasets not present in the data</li>
+					<li class="fragment">But also more interesting - practically often impossible to get create datasets with one-to-one correspondences</li>
+					<table>
+						<tr>
+							<td class="fragment">
+								<img style="width: 400px" src="images/synthia_sample1.png" />
+								<center>Synthetic images</center>
+							</td>
+							<td class="fragment">
+								<img style="width: 400px" src="images/cityscapes_sample1.png" />
+								<center>Real images</center>
+							</td>
+						</tr>
+					</table>
+					<li class="fragment">What is the relation between images from different domains?</li>
+				</ul>
+			</section>
 			<section>
 				<h3 class="with-sub">Classical model of domain adaptation</h3>
 				<p class="sub"><em><a href="http://www.alexkulesza.com/pubs/adapt_mlj10.pdf">(Ben David et al., 2010)</a></em></p>
@@ -755,6 +731,30 @@
 
 				<p style="margin-bottom: 25px">Toy example: 2D gaussians</p>
 				<img src="images/adda/adda-step-54.png" width="80%"/>
+			</section>
+
+			<section>
+				<h3>Adversarial Domain Adaptation</h3>
+
+				<p style="margin-bottom: 25px">Example of CycleGAN <a href="https://arxiv.org/pdf/1703.10593">(Zhu et al., 2017)</a></p>
+				<img src="images/cycleGAN.png" width="200%"/>
+			</section>
+			<section>
+				<h3>Cycle-GAN</h3>
+
+				<ul>
+					<div class="fragment">
+					<li>Cycle-consistency assumption</li>
+						\[
+						F_{TS}(F_{ST}(x_S)) \approx x_S
+						\]
+					</div>
+					<div class="fragment">
+					<li>It's an approximate assumption - we don't want (can't have) it</li>
+					<br />
+					<img style="width: 600px" src="images/incorrect-cycle.png" />
+					</div>
+				</ul>
 			</section>
 
 			<section>
